@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>株式会社4SES</title>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                font-size: 20px;
+                color: #1f2937;
+            }
+            h2 {
+                font-size: 25px;
+                font-weight: 500;
+                margin-bottom: 12px;
+                color: #6b7280;
+            }
+            .gradient {
+                background: linear-gradient(135deg, #6a11cb, #2575fc);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            const render = async (element, content) => {
+                const node = document.createElement(element);
+                document.body.appendChild(node);
+                for (let i = 0; i < content.length; i++) {
+                    let char = document.createElement("span");
+                    char.textContent = content[i];
+                    if (element === "b") char.className = "gradient";
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                    node.appendChild(char);
+                }
+            };
+            const content = async () => {
+                let h2 = "株式会社4SES";
+                await render("h2", h2);
+                let b = "SES営業の直感を、確かなデータとシステムで加速する。";
+                await render("b", b);
+                let div = "案件と要員の最適なマッチングから、属人化の解消まで。";
+                await render("div", div);
+                div = "SES業界に特化したSaaS型マッチングシステム「4SES」が、貴社の営業生産性を飛躍的に向上させます。";
+                await render("div", div);
+                h2 = "企業理念";
+                await render("h2", h2);
+                b = "Mission：要員と案件の最適な出会いを創出し、業界の流動性を高める";
+                await render("b", b);
+                div = "システム開発の現場において、最適な人材が最適なプロジェクトにアサインされることは、プロジェクトの成功とエンジニアの成長に直結します。";
+                await render("div", div);
+                div = "私たちはテクノロジーの力で、SES業界に蔓延する「マッチングの非効率」を解決します。";
+                await render("div", div);
+                b = "Vision：すべてのSES営業が、より付加価値の高い提案に集中できる世界へ";
+                await render("b", b);
+                div = "煩雑なリスト整理やマッチング作業をシステムで自動化・効率化することで、";
+                await render("div", div);
+                div = "営業担当者が本来注力すべき「顧客とのリレーション構築」や「エンジニアのキャリア支援」に専念できる環境を実現します。";
+                await render("div", div);
+                h2 = "事業内容";
+                await render("h2", h2);
+                b = "SaaS事業：SES特化型マッチングシステム「4SES」の開発・運用保守";
+                await render("b", b);
+                div = "自社開発のWebシステム「4SES」を、SES企業様向けに提供いたします。";
+                await render("div", div);
+                div = "営業担当者の業務フローに最適化されたUI/UXにより、条件に合致する要員・案件を瞬時に検索・提案可能にします。";
+                await render("div", div);
+                h2 = "会社概要";
+                await render("h2", h2);
+                div = "設立：2026年4月";
+                await render("div", div);
+                div = "資本金：100万円";
+                await render("div", div);
+                div = "代表者：伊藤順捷";
+                await render("div", div);
+                div = "所在地：〒277-0026 千葉県柏市大塚町6-12";
+                await render("div", div);
+                div = "連絡先：090-2164-2409";
+                await render("div", div);
+                await render("br", "");
+                b = "株式会社4SESは、技術の力で貴社のビジネスを次のステージへ導くパートナーであり続けることをお約束いたします。";
+                await render("b", b);
+            };
+            content();
+        </script>
+    </body>
+</html>
