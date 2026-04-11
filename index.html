@@ -1,88 +1,118 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>株式会社4SES</title>
-        <style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-                font-size: 20px;
-                color: #1f2937;
-            }
-            h2 {
-                font-size: 25px;
-                font-weight: 500;
-                margin-bottom: 12px;
-                color: #6b7280;
-            }
-            .gradient {
-                background: linear-gradient(135deg, #6a11cb, #2575fc);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-        </style>
-    </head>
-    <body>
-        <script>
-            const render = async (element, content) => {
-                const node = document.createElement(element);
-                document.body.appendChild(node);
-                for (let i = 0; i < content.length; i++) {
-                    let char = document.createElement("span");
-                    char.textContent = content[i];
-                    if (element === "b") char.className = "gradient";
-                    await new Promise(resolve => setTimeout(resolve, 100));
-                    node.appendChild(char);
-                }
-            };
-            const content = async () => {
-                let h2 = "株式会社4SES";
-                await render("h2", h2);
-                let b = "SES営業の直感を、確かなデータとシステムで加速する。";
-                await render("b", b);
-                let div = "案件と要員の最適なマッチングから、属人化の解消まで。";
-                await render("div", div);
-                div = "SES業界に特化したSaaS型マッチングシステム「4SES」が、貴社の営業生産性を飛躍的に向上させます。";
-                await render("div", div);
-                h2 = "企業理念";
-                await render("h2", h2);
-                b = "Mission：要員と案件の最適な出会いを創出し、業界の流動性を高める";
-                await render("b", b);
-                div = "システム開発の現場において、最適な人材が最適なプロジェクトにアサインされることは、プロジェクトの成功とエンジニアの成長に直結します。";
-                await render("div", div);
-                div = "私たちはテクノロジーの力で、SES業界に蔓延する「マッチングの非効率」を解決します。";
-                await render("div", div);
-                b = "Vision：すべてのSES営業が、より付加価値の高い提案に集中できる世界へ";
-                await render("b", b);
-                div = "煩雑なリスト整理やマッチング作業をシステムで自動化・効率化することで、";
-                await render("div", div);
-                div = "営業担当者が本来注力すべき「顧客とのリレーション構築」や「エンジニアのキャリア支援」に専念できる環境を実現します。";
-                await render("div", div);
-                h2 = "事業内容";
-                await render("h2", h2);
-                b = "SaaS事業：SES特化型マッチングシステム「4SES」の開発・運用保守";
-                await render("b", b);
-                div = "自社開発のWebシステム「4SES」を、SES企業様向けに提供いたします。";
-                await render("div", div);
-                div = "営業担当者の業務フローに最適化されたUI/UXにより、条件に合致する要員・案件を瞬時に検索・提案可能にします。";
-                await render("div", div);
-                h2 = "会社概要";
-                await render("h2", h2);
-                div = "設立：2026年4月";
-                await render("div", div);
-                div = "資本金：100万円";
-                await render("div", div);
-                div = "代表者：伊藤馨";
-                await render("div", div);
-                div = "所在地：〒277-0026 千葉県柏市大塚町6-12";
-                await render("div", div);
-                div = "連絡先：090-8479-2621";
-                await render("div", div);
-                await render("br", "");
-                b = "株式会社4SESは、技術の力で貴社のビジネスを次のステージへ導くパートナーであり続けることをお約束いたします。";
-                await render("b", b);
-            };
-            content();
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社4SES | SES営業支援SaaS「4SES」</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600 tracking-wider">4SES</h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-blue-600 font-medium">機能</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium">会社概要</a>
+		<a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+                要員と案件の最適なマッチングを、<br class="hidden md:block">もっとスマートに。
+            </h2>
+            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                自社開発のSES営業支援システム「4SES」。<br>
+                手間のかかる営業業務を効率化し、ビジネスの成長を加速させます。
+            </p>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-gray-900">「4SES」の強力な機能</h3>
+                <p class="mt-4 text-gray-600">SES営業の課題を解決する2つのコア機能</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">登録して待つだけ。自動提案メール</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        要員や案件の情報をシステムに登録するだけで、条件にマッチする最適な提案がメールで自動的に届きます。日々の煩雑な案件探しから解放されます。
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">瞬時に見つかる。リアルタイム検索</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        急ぎの案件や要員アサインが必要な場合でも、登録されたデータベースから条件に見合う情報を瞬時に検索・抽出することが可能です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900">会社概要</h3>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-semibold text-gray-700 w-1/3">商号</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">株式会社4SES</td>
+                        </tr>
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-semibold text-gray-700">事業内容</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">
+                                SaaS事業<br>
+                                ・自社開発のSES営業支援システム「4SES」の提供
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-semibold text-gray-700">設立年月</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">2026年4月</td>
+                        </tr>
+			<tr>
+			    <th class="px-6 py-4 bg-gray-50 text-left text-sm font-semibold text-gray-700">代表取締役</th>
+			    <td class="px-6 py-4 text-sm text-gray-900">伊藤久弘</td>
+			</tr>
+			<tr>
+			    <th class="px-6 py-4 bg-gray-50 text-left text-sm font-semibold text-gray-700">本社所在地</th>
+			    <td class="px-6 py-4 text-sm text-gray-900">〒277-0026 千葉県柏市大塚町6-12</td>
+			</tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <h2 class="text-2xl font-bold tracking-wider">4SES</h2>
+                <p class="text-gray-400 text-sm mt-2">SES営業を、もっとシンプルに。</p>
+            </div>
+            <div class="text-gray-400 text-sm">
+                &copy; 2026 株式会社4SES. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>
